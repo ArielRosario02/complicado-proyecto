@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documental</title>
+</head>
+
+<body>
+    {% extends 'layouts/base.html' %} 
+    {% block content %}
+    <h1>Tasks orienteds</h1>
+    {% for task in tasks %}
+    <div>
+        <h1> {% if task.done == False %}
+            <p>&#9201;</p> {% else %}
+            <p>&#9989;</p> {% endif %}{{task.title}}</h1>
+
+        <p>Task ralized </p>
+        <p>{{task.description}}</p>
+        <p>Project: {{task.project.name}}</p>
+        <button>Delete</button>
+        <button><p> &#9989;Done</p></button>
+    </div>
+    {% endfor %} 
+    {% endblock %}
+</body>
+
+</html>
